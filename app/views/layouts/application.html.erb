@@ -44,9 +44,16 @@
             <%= user_signed_in? %>
           </li>
         </ul>
+        <% if signed_in? %>
+        <%= current_user.email %>
         <form action="/users/sign_out" method="get">
           <button type="submit" class="btn btn-logout">Logout</button>
         </form>
+        <% else %>
+        <%= link_to "Sign up", new_user_registration_path %>
+        <%= link_to "Sign in", new_user_session_path %>
+
+        <% end %>
       </div>
     </nav>
     <p class="notice"><%= notice %></p>
