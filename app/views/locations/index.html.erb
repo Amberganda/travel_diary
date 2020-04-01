@@ -8,7 +8,7 @@
         <% @locations.each do |location| %>
         <tr>
             <th scope="row">
-                <%= location.name %><br />
+                <%= link_to location.name, location_path(location) %>
             </th>
         </tr>
         <% end %>
