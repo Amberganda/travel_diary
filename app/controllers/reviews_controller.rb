@@ -2,6 +2,9 @@ class ReviewsController < ApplicationController
 
     def new
         @review = Review.new
+        if params[:location_id]
+            @review.location_id = params[:location_id]
+        end
     end
     
     def create
