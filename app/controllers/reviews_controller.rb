@@ -10,8 +10,13 @@ class ReviewsController < ApplicationController
     def create
         @review = Review.new(review_params)
         @review.user_id = current_user.id
-        @review.save
-        redirect_to review_path(@review)
+        if @review.save
+            flash[:success] = 'Your review has been created.'
+            redirect_to review_path(@review)
+        else
+            flash.now[:alert] = 'Your review could not be created!'
+            render :new
+        end
     end
 
     def show
