@@ -1,1 +1,4 @@
-<%= link_to "Write a review", new_review_path %>
+<%= link_to "Write a review", new_review_path %> <br />
+<% if @most_reviewed_location %>
+<%= link_to "Most Reviewed: #{@most_reviewed_location.name}",  location_path(@most_reviewed_location) %>
+<% end %>

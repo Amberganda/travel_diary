@@ -10,6 +10,12 @@ class Location < ApplicationRecord
     }
     
 
+    # scope :most_reviews_list, -> { 
+    #     left_joins(:reviews).
+    #     group(:id).
+    #     order('COUNT(reviews.id) DESC')
+    # }
+
 
 
 end
