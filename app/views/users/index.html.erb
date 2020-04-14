@@ -1,0 +1,16 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">User</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+            <th scope="row">
+                <%= link_to user.email, user_path(user) %>
+            </th>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
