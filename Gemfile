@@ -29,8 +29,8 @@ gem 'bootstrap', '~> 4.4.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# Use omniauth
-gem 'omniauth', '~> 1.9', '>= 1.9.1'
+# Use omniauth github
+gem 'omniauth-github', '~> 1.4'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
