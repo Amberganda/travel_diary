@@ -3,3 +3,14 @@
 <h3> Location </h3>
 <p> <%= @location.name %> </p>
 <%= link_to "Write a review for #{@location.name}", new_location_review_path(@location) %>
+
+<h4> Reviews: </h4>
+<% @location.reviews.each do |review| %> <br />
+<div class="card">
+    <div class="card-body">
+        <%= review.user.email %>
+        <%= review.created_at.strftime("%m/%d/%Y") %>
+        <%= review.content %>
+    </div>
+</div>
+<% end %>
