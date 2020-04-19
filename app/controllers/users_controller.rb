@@ -6,7 +6,12 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find(params[:id])
+        begin
+            @user = User.find(params[:id])
+        rescue
+            flash.alert = "User not found."
+            redirect_to users_path
+        end
     end
     
 end
