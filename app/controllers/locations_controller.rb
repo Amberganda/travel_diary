@@ -5,8 +5,12 @@ class LocationsController < ApplicationController
     end
 
     def show
-        @location = Location.find(params[:id])
+        begin
+            @location = Location.find(params[:id])
+        rescue
+            flash.alert = "Location not found."
+            redirect_to locations_path
+        end
     end
-
 
 end
