@@ -1,3 +1,4 @@
 User: <%=@review.user.email %> <br />
 Location: <%= @review.location.name %> <br />
 Review: <%= @review.content %> <br />
+Review date: <%= @review.created_at.strftime("%m/%d/%Y") %> <br />
