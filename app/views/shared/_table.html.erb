@@ -1,0 +1,20 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col"><%= header %> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% models.each do |model| %>
+        <tr>
+            <th scope="row">
+                <% if model.class == User %>
+                <%= link_to model.email, user_path(model) %>
+                <% else %>
+                <%= link_to model.name, location_path(model) %>
+                <% end %>
+            </th>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

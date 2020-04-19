@@ -1,16 +1,1 @@
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th scope="col">Location</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @locations.each do |location| %>
-        <tr>
-            <th scope="row">
-                <%= link_to location.name, location_path(location) %>
-            </th>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+<%= render partial: "shared/table", locals: {header: "Locations", models: @locations} %>
