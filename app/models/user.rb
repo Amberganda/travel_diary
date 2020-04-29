@@ -18,4 +18,9 @@ class User < ApplicationRecord
 
       end
     end
+
+    scope :email_contains, -> (keyword) {
+      where("email LIKE ?", "%#{keyword}%").all
+    }
+    
 end

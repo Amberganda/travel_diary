@@ -1,1 +1,8 @@
 <%= render partial: "shared/table", locals: {header: "Users", models: @users} %>
+
+<%= form_tag(users_path, method: 'get') do %>
+<%= text_field_tag(:search, params[:search]) %>
+<%= submit_tag("Search") %>
+<% end %>
+
+<%# https://stackoverflow.com/a/39050590 %>

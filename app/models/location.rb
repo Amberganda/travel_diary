@@ -6,7 +6,8 @@ class Location < ApplicationRecord
         left_joins(:reviews).
         group(:id).
         order('COUNT(reviews.id) DESC').
-        first 
+        limit(1) #limit to make chainable
+        # https://stackoverflow.com/a/42847464/10308022
     }
     
 

@@ -6,7 +6,11 @@
 <% @location.reviews.each do |review| %> <br />
 <div class="card">
     <div class="card-body">
-        User: <%= link_to review.user.email, user_reviews_path(review.user) %><br />
+        User: <% if user_signed_in? %>
+        <%= link_to review.user.email, user_reviews_path(review.user) %><br />
+        <% else %>
+        <%= link_to "Log in to see user name", new_user_session_path %> <br />
+        <% end %>
         Date:<%= review.created_at.strftime("%m/%d/%Y") %><br />
         Review: <%= review.content %><br />
     </div>
